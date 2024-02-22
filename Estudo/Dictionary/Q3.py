@@ -5,38 +5,24 @@
 # pessoas menores de 18 anos do
 # dicionário e coloque em outro dicionário.
 
-def cadastrar_pessoa():
-    nome = input('Digite o nome da pessoa: ')
-    idade = int(input('Digite a idade da pessoa: '))
-    cpf = input('Digite o CPF da pessoa: ')
-    return {'nome': nome, 'idade': idade, 'cpf': cpf}
+pessoas = {}
 
-def main():
-    pessoas = []
-    menores_de_18 = []
+while True:
+    nome = input("Digite o nome da pessoa (ou digite 'sair' para encerrar): ")
+    if nome.lower() == 'sair':
+        break
+    idade = int(input("Digite a idade da pessoa: "))
+    cpf = input("Digite o CPF da pessoa: ")
+    pessoas[nome] = {'idade': idade, 'cpf': cpf}
 
-    continuar = True
-    while continuar:
-        pessoa = cadastrar_pessoa()
-        pessoas.append(pessoa)
-        continuar = input('Deseja cadastrar outra pessoa? (s/n): ').lower() == 's'
+menores_de_18 = {}
 
-    # Separando pessoas menores de 18 anos
-    for pessoa in pessoas:
-        if pessoa['idade'] < 18:
-            menores_de_18.append(pessoa)
+for nome, info in pessoas.items():
+    if info['idade'] < 18:
+        menores_de_18[nome] = info
 
-    # Removendo pessoas menores de 18 anos da lista principal
-    for pessoa in menores_de_18:
-        pessoas.remove(pessoa)
+for nome in menores_de_18:
+    del pessoas[nome]
 
-    print("\nLista de todas as pessoas cadastradas:")
-    for pessoa in pessoas:
-        print(pessoa)
-
-    print("\nLista de pessoas menores de 18 anos:")
-    for pessoa in menores_de_18:
-        print(pessoa)
-
-if __name__ == "__main__":
-    main()
+print("Pessoas maiores de 18 anos:", pessoas)
+print("Pessoas menores de 18 anos:", menores_de_18)
