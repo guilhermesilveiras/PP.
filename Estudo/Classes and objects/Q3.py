@@ -1,3 +1,12 @@
+# 3. Crie uma classe Livro que possui os
+# atributos nome, qtdPaginas, autor e
+# preço.
+# – Crie os métodos getPreco para obter o valor
+# do preco e o método setPreco para setar
+# um novo valor do preco.
+# • Crie um codigo de teste
+
+
 class Livro:
 
     nome = None
