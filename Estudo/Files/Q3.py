@@ -16,3 +16,21 @@
 # que 254).
 
 validos, invalidos = [], []
+ip = open('arquivo.txt')
+tudo = ip.readlines()
+
+for ips in tudo:
+    ok = True
+    partes = ip.split('.')
+    for p in partes:
+        if int(p) > 254:
+            ok = False
+            break
+
+    if ok:
+        validos.append(ip)
+    else:
+        invalidos.append(ip)
+
+print('Validos: ', validos)
+print('Invalidos: ', invalidos)
