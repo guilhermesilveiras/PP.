@@ -1,16 +1,18 @@
-import random
+# 7. Faça um programa que crie uma matriz aleatoriamente.
+# O tamanho da matriz deve ser informado pelo usuário.
 
-n = int(input("Digite o número de linhas da matriz: "))
-m = int(input("Digite o número de colunas da matriz: "))
+import random
 
 matriz = []
 
-for i in range(n):
-    linha = []
-    for j in range(m):
-        num = random.randint(1, 100)  # gera um número aleatório entre 1 e 100
-        linha.append(num)
-    matriz.append(linha)
+c = int(input('Digite um número de colunas para a matriz: '))
+l = int(input('Digite um número de linhas para a matriz: '))
 
-for linha in matriz:
-    print(linha)
+for i in range(l):
+    novaLinha = []
+    for m in range(c):
+        numero = random.randint(1, 100)
+        novaLinha.append(numero)
+    matriz.append(novaLinha)
+
+print(matriz)
