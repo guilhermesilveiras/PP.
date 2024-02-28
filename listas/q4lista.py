@@ -1,6 +1,17 @@
-idades = []
+# 4. Ler um vetor com 20 idades e exibir a
+# maior e menor.
 
-for i in range(20):
-    idades.append(int(input('Insira uma idade: ')))
+vetor = []
+maior_idade = 0
+menor_idade = float('inf')
 
-print('A maior idade é igual ', max(idades), ' e a menor idade é igual a', min(idades))
+for i in range(10):
+    idade = int(input('Insira uma idade para ser inserida no vetor: '))
+    vetor.append(idade)
+
+    if idade > maior_idade:
+        maior_idade = idade
+    if idade < menor_idade:
+        menor_idade = idade
+
+print(f'A maior idade é igual a {maior_idade} e a menor idade é igual a {menor_idade}')

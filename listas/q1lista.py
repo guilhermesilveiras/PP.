@@ -1,7 +1,8 @@
-lista = []
+# 1. Ler uma lista de 5 números inteiros e
+# mostre cada número juntamente com a
+# sua posição na lista.
 
-for i in range (5):
-    lista.append(int(input('Insira um número: ')))
+listaNumeros = [1, 2, 3, 4, 5]
 
-for i, p in enumerate(lista):
-    print( i + 1, '-> ', p)
+for i in listaNumeros:
+    print(i, ' com posição igual a : ', listaNumeros.index(i)+1)

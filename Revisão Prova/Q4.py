@@ -1,16 +1,17 @@
 idades = []
+maior_idade = 0
+menor_idade = float('inf')
 
 for i in range(5):
-    idade = int(input('Digite a sua idade: '))
+    idade = int(input('Digite uma idade: '))
     idades.append(idade)
 
-maior_idade = idades[0]
-menor_idade = idades[0]
-
-for idade in idades:
     if idade > maior_idade:
         maior_idade = idade
     if idade < menor_idade:
         menor_idade = idade
 
-print(f'Maior idade: {maior_idade}, menor idade: {menor_idade}')
+    continue
+
+print(f'A maior idade é igual a {maior_idade}')
+print(f'A menor idade é igual a {menor_idade}')

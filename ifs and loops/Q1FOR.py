@@ -15,3 +15,16 @@
 # imprime o percentual de comissão de cada
 # um.
 
+
+for i in range(5):
+    nPedidos = int(input('Quantos pedidos você vendeu? '))
+    valor = int(input('E qual foi o valor total da venda? '))
+    if nPedidos <= 19:
+        print(f'O valor de sua comissão é igual a', 0.10*valor)
+    elif 20 <= nPedidos <= 49:
+        print('O valor de sua comissão é igual a ', 0.15*valor)
+    elif 50 <= nPedidos <= 74:
+        print('O valor de sua comissão é igual a ', 0.20*valor)
+    elif nPedidos >= 75:
+        print('O valor de sua comissão é igual ', 0.25*valor)
+    continue

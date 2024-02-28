@@ -1,8 +1,10 @@
-numeros = []
+# 2. Ler uma lista de 10 números reais e
+# mostre-os na ordem inversa.
+
+listaNumeros = []
 
 for i in range(10):
-    numeros.append(int(input('Insira um número: ')))
+    listaNumeros.append(int(input('Digite um valor para entrar na lista: ')))
+    listaNumeros.reverse()
 
-
-numeros.reverse()
-print(numeros)
+print(listaNumeros)
