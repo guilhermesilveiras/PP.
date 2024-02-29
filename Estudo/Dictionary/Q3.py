@@ -8,21 +8,21 @@
 pessoas = {}
 
 while True:
-    nome = input("Digite o nome da pessoa (ou digite 'sair' para encerrar): ")
+    nome = input('Digite seu nome: (ou sair para sair) ')
     if nome.lower() == 'sair':
         break
-    idade = int(input("Digite a idade da pessoa: "))
-    cpf = input("Digite o CPF da pessoa: ")
+    idade = int(input('Digite sua idade: '))
+    cpf = input('Digite seu cpf: ')
     pessoas[nome] = {'idade': idade, 'cpf': cpf}
 
-menores_de_18 = {}
+menos_de_18 = {}
 
-for nome, info in pessoas.items():
-    if info['idade'] < 18:
-        menores_de_18[nome] = info
+for nome, i in pessoas.items():
+    if i['idade'] <= 18:
+        menos_de_18[nome] = i
 
-for nome in menores_de_18:
+for nome in menos_de_18:
     del pessoas[nome]
 
-print("Pessoas maiores de 18 anos:", pessoas)
-print("Pessoas menores de 18 anos:", menores_de_18)
+print('Pessoas maiores de 18: ', pessoas)
+print('Pessoas menores de 18: ', menos_de_18)
